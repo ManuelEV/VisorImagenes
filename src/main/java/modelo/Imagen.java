@@ -34,14 +34,6 @@ public class Imagen {
             for (int i = 0; i < ancho; i++) {
                 for (int j = 0; j < alto; j++) {
                     this.bitMap[i][j] = new Color(img.getRGB(i, j));
-                    
-                    //probando
-                    System.out.println("");
-                    System.out.println("Red:"+bitMap[i][j].getRed());
-                    System.out.println("Green:"+bitMap[i][j].getGreen());
-                    System.out.println("Blue:"+bitMap[i][j].getBlue());
-                    System.out.println("");
-                    //////////
                 }
             }
 
@@ -53,6 +45,26 @@ public class Imagen {
 
     public Color[][] getBitMap() {
         return this.bitMap;
+    }
+    
+    public void setBitMap(Color[][] c) {
+        this.bitMap = c;
+    }
+
+    public int getAlto() {
+        return alto;
+    }
+
+    public void setAlto(int alto) {
+        this.alto = alto;
+    }
+
+    public int getAncho() {
+        return ancho;
+    }
+
+    public void setAncho(int ancho) {
+        this.ancho = ancho;
     }
 
     

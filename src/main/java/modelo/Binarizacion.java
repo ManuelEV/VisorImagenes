@@ -19,10 +19,10 @@ public class Binarizacion implements Filtro {
         
         
     //Modificar matriz de Color local    
-        for (int i = 0; i < alto; i++) {
-            for (int j = 0; j < ancho; j++) {
+        for (int i = 0; i < ancho; i++) {
+            for (int j = 0; j < alto; j++) {
                 Color pix= img[i][j];
-                int promedio =((pix.getBlue()*(11/100))+(pix.getRed()*(3/10))+(pix.getGreen()*(59/100)));
+                int promedio =((pix.getBlue())+(pix.getRed())+(pix.getGreen()))/3;
                 if (promedio<umbralD) 
                     img[i][j]=Color.BLACK;
                 else

@@ -4,9 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.JFrame;
 import java.awt.event.ActionListener;
-import modelo.ControladorFiltro;
-import modelo.Filtro;
-import modelo.Imagen;
+
+import modelo.*;
 
 public class VentanaPrincipal extends JFrame implements ActionListener {
 
@@ -43,6 +42,17 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.panelBotones.btnReset) {
+            Imagen img = new Imagen("data/imagen.bmp");
+            this.panelImagen = new PanelImagen(img);
+        }else if(e.getSource() == this.panelBotones.btnBinarizacion){
+            ControladorFiltro.ejecutarFiltro(new Binarizacion(),this.panelImagen.getImg());
+        }else if (e.getSource() == this.panelBotones.btnEscalaGrises){
+            ControladorFiltro.ejecutarFiltro(new EscalaGrises(),this.panelImagen.getImg());
+        }else if (e.getSource() == this.panelBotones.btnFlipVertical){
+            ControladorFiltro.ejecutarFiltro(new FlipVertical(),this.panelImagen.getImg());
+        }else if (e.getSource() == this.panelBotones.btnNegativo){
+            ControladorFiltro.ejecutarFiltro(new Negativo(),this.panelImagen.getImg());
         }
+        this.panelImagen.actualizar();
     }
 }

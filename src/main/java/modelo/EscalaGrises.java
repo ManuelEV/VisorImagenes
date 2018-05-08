@@ -6,9 +6,10 @@ public class EscalaGrises implements Filtro {
 
     @Override
     public Imagen aplicarFiltro(Imagen imagen) {
+        Color colores [][] = new Color [imagen.getAncho()][imagen.getAlto()];
         imagen.getBitMap();
-        for (int i = 0; i < imagen.getBitMap().length ; i++) {
-            for (int j = 0; j < imagen.getBitMap()[i].length; j++) {
+        for (int i = 0; i < imagen.getAncho() ; i++) {
+            for (int j = 0; j < imagen.getAlto(); j++) {
                 Color pixelColor = new Color(imagen.getBitMap()[i][j].getRGB());
                 
                 int red = pixelColor.getRed();
@@ -19,8 +20,11 @@ public class EscalaGrises implements Filtro {
                 
                 int mediaRGBInteger = (mediaRGB << 16) | (mediaRGB << 8) | mediaRGB;
                 
-                //imagen.getBitMap()[i][j].setBitMap()[]
+                Color color = new Color(mediaRGBInteger);
+                colores[i][j]=color;
             }
         }
+        imagen.setBitMap(colores);
+        return imagen;
     }
 }

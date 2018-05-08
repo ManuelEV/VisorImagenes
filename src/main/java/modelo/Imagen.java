@@ -65,6 +65,14 @@ public class Imagen {
         this.bitMap = c;
     }
 
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
+
     public int getAlto() {
         return alto;
     }

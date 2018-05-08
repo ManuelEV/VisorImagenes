@@ -1,5 +1,7 @@
 package vista;
 
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import javax.swing.JButton;
@@ -25,12 +27,6 @@ public class PanelBotones extends JPanel {
         this.btnReset = new JButton("Reset");
         
         this.setLayout(new GridLayout(3, 2));
-        
-        /*
-        GridLayout layout = (GridLayout) this.getLayout();
-        layout.setHgap(50);
-        layout.setVgap(40);
-        */
         
         this.add(btnNegativo);
         this.add(btnEscalaGrises);

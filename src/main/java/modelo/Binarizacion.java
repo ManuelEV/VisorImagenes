@@ -12,9 +12,13 @@ public class Binarizacion implements Filtro {
         Color[][] img=imagen.getBitMap();
         int alto=imagen.getAlto();
         int ancho=imagen.getAncho();
-        
+       
+    //Solicitar Umbral mediante JOptionPane
         String umbral=JOptionPane.showInputDialog("Ingrese umbral entre 0-255"); 
         double umbralD=Double.parseDouble(umbral);
+        
+        
+    //Modificar matriz de Color local    
         for (int i = 0; i < alto; i++) {
             for (int j = 0; j < ancho; j++) {
                 Color pix= img[i][j];
@@ -25,7 +29,9 @@ public class Binarizacion implements Filtro {
                     img[i][j] = Color.WHITE;
             }
         }
+    //Modificar matriz de Color de imagen
         imagen.setBitMap(img);
+    //Retorna imagen modificada
         return imagen;
     }
     

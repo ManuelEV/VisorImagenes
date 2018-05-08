@@ -42,8 +42,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.panelBotones.btnReset) {
-            Imagen img = new Imagen("data/imagen.bmp");
-            this.panelImagen = new PanelImagen(img);
+            this.panelImagen.resetImagen();
         }else if(e.getSource() == this.panelBotones.btnBinarizacion){
             ControladorFiltro.ejecutarFiltro(new Binarizacion(),this.panelImagen.getImg());
         }else if (e.getSource() == this.panelBotones.btnEscalaGrises){

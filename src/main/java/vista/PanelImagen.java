@@ -30,4 +30,8 @@ public class PanelImagen extends JPanel {
         this.repaint();
         this.etiqueta.setIcon(new ImageIcon(img.obtenerImagen()));
     }
+    
+    public void resetImagen(){
+        this.img= new Imagen(this.img.getRuta());
+    }
 }

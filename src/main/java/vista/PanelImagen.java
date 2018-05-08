@@ -1,15 +1,28 @@
 package vista;
 
-import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import modelo.Imagen;
+//dev
 
 public class PanelImagen extends JPanel {
 
-    public PanelImagen() {
+    private Imagen img;
+    private ImageIcon imgIcon;
+
+    public PanelImagen(Imagen imagen) {
+        this.img = imagen;
         this.inicializarComponentes();
     }
-    
-    private void inicializarComponentes(){
-        this.setBackground(Color.BLUE);
+
+    public Imagen getImg() {
+        return img;
+    }
+
+    private void inicializarComponentes() {
+        imgIcon = new ImageIcon(img.obtenerImagen());
+        JLabel etiqueta = new JLabel(imgIcon);
+        this.add(etiqueta);
     }
 }

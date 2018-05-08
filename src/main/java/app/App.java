@@ -5,6 +5,8 @@
  */
 package app;
 
+import vista.VentanaPrincipal;
+
 /**
  *
  * @author dci
@@ -15,7 +17,7 @@ public class App {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        VentanaPrincipal v1 = new VentanaPrincipal();
     }
     
 }

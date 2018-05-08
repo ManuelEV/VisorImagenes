@@ -9,7 +9,7 @@ import modelo.Imagen;
 public class PanelImagen extends JPanel {
 
     private Imagen img;
-    private ImageIcon imgIcon;
+    private JLabel etiqueta;
 
     public PanelImagen(Imagen imagen) {
         this.img = imagen;
@@ -21,8 +21,13 @@ public class PanelImagen extends JPanel {
     }
 
     private void inicializarComponentes() {
-        imgIcon = new ImageIcon(img.obtenerImagen());
-        JLabel etiqueta = new JLabel(imgIcon);
+        ImageIcon imgIcon = new ImageIcon(img.obtenerImagen());
+        etiqueta = new JLabel(imgIcon);
         this.add(etiqueta);
+    }
+    
+    public void actualizar(){
+        this.repaint();
+        this.etiqueta.setIcon(new ImageIcon(img.obtenerImagen()));
     }
 }

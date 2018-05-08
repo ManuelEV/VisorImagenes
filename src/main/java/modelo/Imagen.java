@@ -43,10 +43,24 @@ public class Imagen {
 
     }
 
+    public BufferedImage obtenerImagen() {
+        
+        BufferedImage imagen = new BufferedImage(bitMap.length, bitMap[0].length,
+                BufferedImage.TYPE_INT_RGB);
+        
+        for (int i = 0; i < bitMap.length; i++) {
+            for (int j = 0; j < bitMap[i].length; j++) {
+                imagen.setRGB(i, j, bitMap[i][j].getRGB());
+            }
+        }
+        
+        return imagen;
+    }
+
     public Color[][] getBitMap() {
         return this.bitMap;
     }
-    
+
     public void setBitMap(Color[][] c) {
         this.bitMap = c;
     }
@@ -67,6 +81,4 @@ public class Imagen {
         this.ancho = ancho;
     }
 
-    
-    
 }

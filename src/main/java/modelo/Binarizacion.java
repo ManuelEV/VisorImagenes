@@ -5,13 +5,15 @@ import javax.swing.JOptionPane;
 
 public class Binarizacion implements Filtro {
 
+    public Binarizacion(){}
+    
        @Override
     public Imagen aplicarFiltro(Imagen imagen) {
         Color[][] img=imagen.getBitMap();
         int alto=imagen.getAlto();
         int ancho=imagen.getAncho();
         
-        String umbral=JOptionPane.showInputDialog("Ingrese umbral entre 0-255");
+        String umbral=JOptionPane.showInputDialog("Ingrese umbral entre 0-255"); 
         double umbralD=Double.parseDouble(umbral);
         for (int i = 0; i < alto; i++) {
             for (int j = 0; j < ancho; j++) {

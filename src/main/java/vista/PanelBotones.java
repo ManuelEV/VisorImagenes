@@ -1,9 +1,6 @@
 package vista;
 
-import java.awt.Dimension;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.LayoutManager;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -18,8 +15,8 @@ public class PanelBotones extends JPanel {
     public PanelBotones() {
         this.initComps();
     }
-    
-    private void initComps(){
+
+    private void initComps() {
         this.btnBinarizacion = new JButton("Binarizacion");
         this.btnEscalaGrises = new JButton("Escala de Grises");
         this.btnFlipVertical = new JButton("Flip Vertical");
@@ -28,10 +25,34 @@ public class PanelBotones extends JPanel {
         
         this.setLayout(new GridLayout(3, 2));
         
+        /*
+        GridBagLayout layout = new GridBagLayout();
+        this.setLayout(layout);
+
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        c.gridheight = 1;
+        c.gridwidth = 2;
+
+        this.add(btnNegativo, c);
+        c.gridx=2;
+        this.add(btnEscalaGrises, c);
+        c.gridx=0;
+        c.gridy=1;
+        this.add(btnBinarizacion, c);
+        c.gridx=2;
+        this.add(btnFlipVertical, c);
+        c.gridx=0;
+        c.gridy=2;
+        this.add(btnReset, c);
+        c.gridx=2;
+        */
+        
         this.add(btnNegativo);
         this.add(btnEscalaGrises);
         this.add(btnBinarizacion);
-        this.add(btnFlipVertical);        
+        this.add(btnFlipVertical);
         this.add(btnReset);
     }
 }

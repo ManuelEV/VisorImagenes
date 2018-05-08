@@ -40,8 +40,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.panelBotones.btnBinarizacion) {
-            //ControladorFiltro.ejecutarFiltro(new Filtro, im);
+        if (e.getSource() == this.panelBotones.btnReset) {
+            this.panelImagen = new PanelImagen();
         }
     }
 }

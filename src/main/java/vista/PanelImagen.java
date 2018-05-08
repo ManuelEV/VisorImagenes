@@ -5,19 +5,33 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import modelo.Imagen;
 //dev
+
 public class PanelImagen extends JPanel {
 
     private Imagen img;
-    private ImageIcon imgIcon;
-    
-    public PanelImagen() {
-        this.img = new Imagen("data/imagen.bmp");
+    private JLabel etiqueta;
+
+    public PanelImagen(Imagen imagen) {
+        this.img = imagen;
         this.inicializarComponentes();
     }
-    
-    private void inicializarComponentes(){
-        imgIcon = new ImageIcon(img.obtenerImagen());
-        JLabel etiqueta = new JLabel(imgIcon);
+
+    public Imagen getImg() {
+        return img;
+    }
+
+    private void inicializarComponentes() {
+        ImageIcon imgIcon = new ImageIcon(img.obtenerImagen());
+        etiqueta = new JLabel(imgIcon);
         this.add(etiqueta);
+    }
+    
+    public void actualizar(){
+        this.repaint();
+        this.etiqueta.setIcon(new ImageIcon(img.obtenerImagen()));
+    }
+    
+    public void resetImagen(){
+        this.img= new Imagen(this.img.getRuta());
     }
 }

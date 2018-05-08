@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import java.awt.event.ActionListener;
 import modelo.ControladorFiltro;
 import modelo.Filtro;
+import modelo.Imagen;
 
 public class VentanaPrincipal extends JFrame implements ActionListener {
 
@@ -20,7 +21,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     private void inicializarComponente() {
         this.panelSuperior = new PanelSuperior();
         this.panelBotones = new PanelBotones();
-        this.panelImagen = new PanelImagen();
+        Imagen img = new Imagen("data/imagen.bmp");
+        this.panelImagen = new PanelImagen(img);
 
         this.add(this.panelSuperior, BorderLayout.NORTH);
         this.add(this.panelImagen, BorderLayout.WEST);
@@ -41,7 +43,6 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.panelBotones.btnReset) {
-            this.panelImagen = new PanelImagen();
         }
     }
 }
